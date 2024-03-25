@@ -25,3 +25,15 @@ docker-compose build
 ## Run tests
 
 docker-compose run --rm app sh -c "python manage.py test && flake8"
+
+## Migrations
+
+    docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+    docker-compose run --rm app sh -c "python manage.py wait_for_db_raw && python manage.py migrate"
+
+## List docker volume
+
+    docker volume ls
+
+    docker volume rm <volume>
